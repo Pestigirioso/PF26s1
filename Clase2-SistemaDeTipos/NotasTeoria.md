@@ -44,7 +44,11 @@ Ej:
 
 ## Sistemas de tipos
 
+```
 f :: A -> B
 e :: A
 ------------
 f e :: B
+```
+
+Donde hay un espacio en la última parte, hay una flecha en el primero de todos, es decir, una función de A -> B
