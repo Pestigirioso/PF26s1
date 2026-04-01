@@ -15,7 +15,7 @@ const ::
 const x = g
     where g y = x
 
-twice ::
+twice :: (a -> a) -> (a -> a)
 twice f = g
     where g x = f (f x)
 
