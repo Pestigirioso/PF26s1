@@ -64,4 +64,28 @@ Los paréntesis a derecha pueden ser invisibles.
 
 Luego, leer en francés es decir que, en lugar de "f es una función que toma x y devuelve una función que toma y y devuelve un resultado", decimos que "f es una función que toma dos elementos y devuelve un resultado", aunque pensamos que cada función solo toma 1 elemento.
 
+## Aplicación parcial
 
+Puedo "pasarle menos argumentos" a una función. Por ejemplo: `suma x y = x + y` y puedo usarla como `succ = suma 1`, y acá `suma` está aplicada de forma parcial.
+***Nota*** Cabe destacar que "aplicación parcial" es una expresión rara, porque en Haskell TODAS las funciones reciben solo un argumento.
+
+Luego, escribir una función (en el ejemplo usa `derive` y `deriveN`) con aplicación parcial en su forma no currificada (que toma una tupla de argumentos) es mucho más difícil que con funciones currificadas.
+
+
+Una de las ventajas de la aplicación parcial, es poder escribir una función que aplica a otra muchas veces
+Ejemplo: `many`
+
+```haskell
+many :: Int -> (a -> a) -> (a -> a)
+many 0 f x = x
+many n f x = f (many (n-1) f x)
+```
+
+Con esta notación, si bien no se nota que toma tres argumentos en el tipo (si no "pensamos en francés"), demuestra de forma muy clara que es una función que transforma funciones en funciones.
+
+Ejemplos de aplicación de `many`:
+
+```haskell
+twice = many 2     many 1 = apply
+para todo n, deriveN n = many n derive
+```
