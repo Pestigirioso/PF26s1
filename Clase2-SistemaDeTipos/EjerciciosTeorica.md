@@ -1,17 +1,17 @@
 # Ejercicio 0
 
 ```haskell
-doble ::
+doble ::Int -> Int
 doble x = x + x
 
-id :: 
+id :: a -> a
 id x = x
 
-suma :: 
+suma :: Int -> (Int -> Int)
 suma x = g
     where g y = x + y
 
-const ::
+const ::a -> (b -> a)
 const x = g
     where g y = x
 
@@ -19,17 +19,17 @@ twice :: (a -> a) -> (a -> a)
 twice f = g
     where g x = f (f x)
 
-compose ::
+compose ::(b -> c) -> (a -> b) -> (a -> c)
 compose f = h
     where h g = k
         where k x = f (g x)
 
-flip :: 
+flip :: (b -> (a -> c)) -> (a -> (b -> c))
 flip f = g
     where g x = h
         where h y = (f y) x
 
-subst ::
+subst ::(a -> (b -> c)) -> ((a -> b) -> (a -> c))
 subst f = h
     where h g = k
         where k x = (f x) (g x)
