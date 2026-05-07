@@ -27,12 +27,6 @@ flip f x y = f y x
 subst :: (a -> (b -> c)) -> (a -> b) -> a -> c
 subst f g x = f x (g x)
 
-curry :: ((a, b) -> c) -> a -> b -> c
-curry f x y = f (x, y)
-
-uncurry :: (a -> b -> c) -> (a, b) -> c
-uncurry f (x, y) = f x y
-
 apply :: (a -> b) -> a -> b
 apply f x = f x
 
@@ -57,3 +51,9 @@ appDist f (x, y) = (f x, f y)
 many :: Int -> (a -> a) -> a -> a
 many 0 f x = x
 many n f x = f (many (n - 1) f x)
+
+curry :: ((a, b) -> c) -> a -> b -> c
+curry f x y = f (x, y)
+
+uncurry :: (a -> b -> c) -> (a, b) -> c
+uncurry f (x, y) = f x y
