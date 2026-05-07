@@ -63,6 +63,8 @@ compose f = h
     where h g = k
         where k x = f (g x)
 
+a) compose :: 
+
 flip ::
 flip f = g
     where g x = h
@@ -112,3 +114,4 @@ Las siguientes expresiones son equivalentes:
 f x = e
 <=>
 f = \x -> e
+```
