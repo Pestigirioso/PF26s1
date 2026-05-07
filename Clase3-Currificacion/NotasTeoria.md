@@ -71,7 +71,7 @@ flip f = g
         where h y = (f y) x
         
 subst ::
-sugbt f = h
+subst f = h
     where h = g = k
         where k x = (f x) (g x)
 ```
@@ -103,7 +103,7 @@ A -> B -> C
 
 ### Sección de operadores
 
-En el caso `2 + 3`, el `+` es un operador. Un operador NO PUEDE no tener nada alrededor, pero si quiero hablar de "La función que representa el `+` tengo que usar sección de operadores.
+En el caso `2 + 3`, el `+` es un operador. Un operador **NO PUEDE** _no_ tener nada alrededor, pero si quiero hablar de "La función que representa el `+` tengo que usar sección de operadores.
 
 En el caso de los operadores, al ser los más importantes, son los últimos que se resuelven. Por ejemplo, `doble 2 + 3` es lo mismo que `(doble 2) + 3`, que me da 7. En caso de que quiera que me de 10, debo escribir `doble (2+3)`
 
