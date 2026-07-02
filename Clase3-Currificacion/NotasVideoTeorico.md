@@ -73,7 +73,7 @@ Luego, escribir una función (en el ejemplo usa `derive` y `deriveN`) con aplica
 
 
 Una de las ventajas de la aplicación parcial, es poder escribir una función que aplica a otra muchas veces
-Ejemplo: `many`
+Ejemplo: `m`
 
 ```haskell
 many :: Int -> (a -> a) -> (a -> a)
