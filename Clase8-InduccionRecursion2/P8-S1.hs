@@ -54,10 +54,17 @@ reverse' [] = []
 reverse' (x:xs) = reverse xs ++ [x]
 
 -- l.
+-- zip' :: [a] -> [b] -> [(a, b)]
+-- zip' [] ys = []
+-- zip' xs [] = []
+-- zip' (x:xs) (y:ys) = (x,y) : zip' xs ys
+
 zip' :: [a] -> [b] -> [(a, b)]
 zip' [] ys = []
-zip' xs [] = []
-zip' (x:xs) (y:ys) = (x,y) : zip' xs ys
+zip' (x:xs) ys = case ys of
+                [] -> []
+                (y:ys) -> (x, y) : zip'' xs ys
+
 
 -- m.
 unzip' :: [(a, b)] -> ([a], [b])
